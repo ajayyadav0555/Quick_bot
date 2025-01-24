@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
-const GEMINI_API_KEY = "AIzaSyAmGHTyIUlgyLyLa8Qh8TQoQX-zZ_DrPIY"
+const GEMINI_API_URL = process.env.API_URL;
+const GEMINI_API_KEY = process.env.API_KEY
 
 app.post('/api/generate-response', async (req, res) => {
   const { query } = req.body;
